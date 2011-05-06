@@ -38,4 +38,7 @@ public class Fuel extends Model {
 
     @OneToMany(mappedBy="fuelType", cascade= CascadeType.PERSIST)
     public List<FuelSupply> fuelSuplies;
+    
+    @OneToMany(mappedBy="fuelType", cascade= CascadeType.PERSIST)
+    public List<FuelConsumptionSpec> fuelConsumptionSpecs;
 }

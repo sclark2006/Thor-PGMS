@@ -5,6 +5,7 @@
 package models;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import play.data.validation.*;
@@ -24,8 +25,11 @@ public class FuelConsumptionSpec  extends Model {
     @ManyToOne    
     public Generator generator;
     
-    @Required
+    @ManyToOne(optional=false)
+    @JoinColumn(name="fuelType")        
     public Fuel fuelType;
+    
+    
     
     public double consumptionAt25pcOfLoad;
     public double consumptionAt50pcOfLoad;
