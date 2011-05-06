@@ -41,7 +41,8 @@ public class FuelConsumptionSpec  extends Model {
     
     @Override
     public String toString() {
-        String result = fuelType.measureUnit + " of " + fuelType.name +
+        String result = this.generator.toString() + " consumes " +
+                fuelType.measureUnit + " of " + fuelType.name +
                 ": @1/4 " + consumptionAt25pcOfLoad +
                 ", @1/2 " + consumptionAt50pcOfLoad + 
                 ", @3/4 " + consumptionAt75pcOfLoad + 

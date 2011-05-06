@@ -8,11 +8,14 @@ GET     /                                       Application.index
 #Admin Routes
 #GET      /admin                                 Generators.list
 
+
+# Import CRUD routes
+*      /admin                                    module:crud
+*      /crud/index                               module:crud
+
+
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
-
-# Import CRUD routes
-*      /admin                                    module:crud
