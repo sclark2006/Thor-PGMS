@@ -1,0 +1,15 @@
+## YAML Template.
+---
+# Test data
+
+Generator(gen1):
+    name:          GEN01
+    model:         DSKAB
+    maker:         CUMMINS
+    powerOuput:    13.6
+    engineType:    Kubota D1703-M
+    fuelCosumptionAt25pc : 0.31
+    fuelCosumptionAt50pc: 0.62
+    fuelCosumptionAt75pc: 0.93
+    fuelCosumptionAt100pc: 1.24
+

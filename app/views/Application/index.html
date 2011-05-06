@@ -1,0 +1,34 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+#{ifnot generators }
+    <p>
+        No generators
+    </p>
+#{/ifnot}
+<ul>
+    #{list items:generators, as:'gen'}
+    <li>
+        ${gen.name}
+        ${gen.model}
+        ${gen.powerOuput}
+        ${gen.fuelCosumptionAt100pc}
+    </li>
+    #{/list}
+</ul>
+
+<p>
+    <a id="createGenerator" href="#">Registrar un nuevo Generador de Energía</a>
+</p>
+
+<script type="text/javascript" charset="utf-8">
+    //Crear un generador
+    $('#createGenerator').click( function() {
+        $.post('@{createGenerator()}', {name: prompt('Nombre del Generador')}, function(gen) {
+            $('ul').append(
+                '<li>'+ gen.name +  ' ' + gen.model +  ' ' + gen.powerOutput + ' ' + gen.fuelConsumptionAt100pc + ' </li>'
+            )
+        }, 'json');        
+    });
+</script>
+    
