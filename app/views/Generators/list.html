@@ -1,4 +1,5 @@
 #{extends 'CRUD/layout.html' /}
+<!-- Generators list -->  
 
 <div id="crudList" class="${type.name}">
 	
@@ -7,11 +8,11 @@
 	<div id="crudListSearch">
 		#{crud.search /}
 	</div>
-
+        
 	<div id="crudListTable">
-		#{crud.table fields:['name', 'powerOutputKW']}
+		#{crud.table fields:['name', 'maker','model','engineType','powerOutputKW']}
                    #{crud.custom 'edit'}
-                        <a href="@{Users.edit(object.id)}">Edit</a>
+                        <a href="@{Generators.edit(object.id)}">Edit</a>
                    #{/crud.custom}
                 #{/crud.table}
    
@@ -24,6 +25,4 @@
 	<p id="crudListAdd">
 		<a href="@{blank()}">&{'crud.add', type.modelName}</a>
 	</p>
-
-        
 </div>

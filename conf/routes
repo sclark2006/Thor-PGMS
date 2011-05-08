@@ -3,11 +3,10 @@
 # ~~~~
 
 # Home page
-GET     /                                       Application.index
+GET     /                                        Application.index
 
-#Admin Routes
-#GET      /admin                                 Generators.list
-
+#Administration
+#GET     /admin/?                                Admin.index
 
 # Import CRUD routes
 *      /admin                                    module:crud

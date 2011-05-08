@@ -1,0 +1,29 @@
+Generators
+  -List
+  -Show
+
+Fuels
+  -List
+  -Show
+
+Maintenance
+  ->Pending Tasks
+  ->Performed Tasks
+  
+Search
+  
+Queries
+  -Page View
+  -Query View
+  
+Settings
+  -General
+  -Maintenance
+	-Items  
+    -Plans
+	-Tasks
+  -Security
+	-Users
+	-Roles
+	-Options
+	-Grants/Access

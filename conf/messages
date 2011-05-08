@@ -2,6 +2,7 @@
 # For example, for French create a messages.fr file
 #
 
+generator=Generator 
 name=Name
 model=Generator Model
 maker=Generator Maker

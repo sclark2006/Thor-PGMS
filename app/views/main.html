@@ -4,13 +4,51 @@
     <head>
         <title>#{get 'title' /}</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}">
-        #{get 'moreStyles' /}
+        <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/custom-theme/jquery-ui-1.8.12.custom.css'}">
+        <link rel="stylesheet" type="text/css" media="screen" 
+        href="@{'/public/stylesheets/crud.css'}" />        
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
-        <script src="@{'/public/javascripts/jquery-1.4.2.min.js'}" type="text/javascript" charset="utf-8"></script>
-        #{get 'moreScripts' /}
+        <script src="@{'/public/javascripts/jquery/jquery-1.5.1.min.js'}" type="text/javascript" charset="utf-8"></script>
+        <script src="@{'/public/javascripts/jquery/jquery-ui-1.8.12.custom.min.js'}" type="text/javascript" charset="utf-8"></script>
+        <script>        
+        $(function(){
+        $('#tabs').tabs({
+          load: function(event, ui) {
+            $('#crud a', ui.panel).click(function() {
+              var tabId=$('#tabs').tabs('option', 'selected');
+             $('#tabs').tabs("url", tabId, this.href).tabs("load",tabId);
+              return false;
+            });
+          }
+        });
+      }); 
+      
+      </script>    
+       
     </head>
+        
     <body>
-        #{doLayout /}
+        <div id="tabs">
+            <ul id="adminMenu">
+            <!-- <li class="${request.controller == 'Admin' ? 'selected' : ''}">
+                <a href="@{Admin.index()}">My posts</a>
+            </li>
+            -->
+                <li >
+                    <a href="@{Generators.list()}">Generators</a>
+                </li>
+                <li>
+                    <a href="@{Fuels.list()}">Fuels</a>
+                </li>
+                <li>
+                    <a href="#">Queries</a>
+                </li>
+                <li >
+                    <a href="#">Settings</a>
+                </li>
+            </ul>
+        </div>
+       #{doLayout /} 
     </body>
+        
 </html>

@@ -1,0 +1,20 @@
+#{extends 'main.html' /}
+#{set title: 'Generators' /} 
+
+
+#{ifnot generators }
+    <p>
+        No generators
+    </p>
+#{/ifnot}
+<ul>
+    #{list items:generators, as:'gen'}
+    <li>
+        ${gen.name}
+        ${gen.model}
+        ${gen.powerOutputKW}
+    </li>    
+    
+    <a href="@{Application.generator(gen.id)}">Edit</a>
+    #{/list}
+</ul>    

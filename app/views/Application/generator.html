@@ -1,0 +1,15 @@
+#{extends 'main.html' /}
+#{set title: generator.name  /} 
+
+    
+<h3><a href="#"> ${generator.name}</a></h3>
+<div>
+    <img src="@{'/public/images/genset/genset_off.png'}" 
+         alt="GenSet Off" height="130" width="200">
+    <ul>
+        <li><h4>${generator.model}</h4></li>
+        <li><b>powerOutputKW</b>${generator.powerOutputKW}</li>
+        <li><b>engineType</b>${generator.engineType}</li>
+    </ul>
+    <br clear="all">
+</div>    
